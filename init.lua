@@ -53,9 +53,11 @@ require("telescope").setup {
       previewer = false,
       display_stat = false,
       collapse_dirs = true,
-
+      git_status = false,
       sorting_strategy = "ascending",
+      default_selection_index= 2,
 
+      -- Positioning
       layout_strategy = "vertical",
       layout_config = {
         anchor = "E",
