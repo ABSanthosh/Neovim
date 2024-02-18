@@ -65,15 +65,8 @@ require("telescope").setup {
 	width = 33,
 	prompt_position = "top",
       },
-      mappings = {
-        ["i"] = {
-          ["<C-n>"] = fb_actions.create_from_prompt
-        },
-        ["n"] = {
-          ["<C-n>"] = fb_actions.create_from_prompt
-	},
-      },
     }
   }
 }
 require("telescope").load_extension "file_browser"
+
