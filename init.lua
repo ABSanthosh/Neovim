@@ -1,4 +1,5 @@
 require("remap");
+require("set");
 
 -- Install lazy package manager
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -17,8 +18,24 @@ vim.opt.rtp:prepend(lazypath)
 -- [[ Configure plugins ]]
 require('lazy').setup({
   { import = "plugins" },
+  
+  -- TODO: See how to use these two
+  'tpope/vim-fugitive',
+  'tpope/vim-rhubarb',
 },{})
 
+
+-- Enable fzf
+pcall(require('telescope').load_extension, 'fzf')
+
+-- Mason lsp config
+require('mason').setup()
+require('mason-lspconfig').setup()
+
+-- Lua config
+require('neodev').setup()
+
+-- Telescope
 local actions = require('telescope.actions')
 local fb_actions = require "telescope".extensions.file_browser.actions
 
@@ -27,6 +44,7 @@ require("telescope").setup {
     layout_config = {
       anchor = "N",
     },
+    selection_caret = "➻ ",
     mappings = {
       i = {
         ["<esc>"] = actions.close,
@@ -61,9 +79,9 @@ require("telescope").setup {
       layout_strategy = "vertical",
       layout_config = {
         anchor = "E",
-	height = 0.96,
-	width = 33,
-	prompt_position = "top",
+        height = 0.96,
+      	width = 33,
+      	prompt_position = "top",
       },
     }
   }

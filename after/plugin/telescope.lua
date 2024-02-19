@@ -6,6 +6,11 @@ vim.api.nvim_set_keymap(
   ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
   { noremap = true }
 )
-vim.keymap.set('n', '<C-A-f>', function()
-  builtin.grep_string({ search = vim.fn.input("Grep > ") })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
+vim.keymap.set('n', '<C-f>', function()
+  builtin.live_grep({
+    theme = "dropdown",
+  })
 end)
