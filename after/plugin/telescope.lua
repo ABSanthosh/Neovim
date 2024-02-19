@@ -8,9 +8,4 @@ vim.api.nvim_set_keymap(
 )
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-
-vim.keymap.set('n', '<C-f>', function()
-  builtin.live_grep({
-    theme = "dropdown",
-  })
-end)
+vim.keymap.set('n', '<leader>fw', builtin.live_grep, {})

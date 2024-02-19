@@ -45,6 +45,9 @@ require("telescope").setup {
       anchor = "N",
     },
     selection_caret = "➻ ",
+    prompt_prefix = "  ",
+    path_display = { "smart" },
+    dynamic_preview_title = true,
     mappings = {
       i = {
         ["<esc>"] = actions.close,
@@ -56,11 +59,22 @@ require("telescope").setup {
   },
   pickers = {
     buffers = {
+      layout_config = {
+        anchor = "CENTER",
+        width = 80, 
+        height = 15,
+      },
+      sort_mro = true,
       sort_lastused = true, 
       previewer = false,
       theme = "dropdown",
+      mappings = {
+        i = { ['<C-w>'] = actions.delete_buffer },
+        n = { ['<C-w>'] = actions.delete_buffer },
+      },
     },
     find_files = {
+      sort_lastused = true, 
       previewer = false,
       theme = "dropdown",
     }
