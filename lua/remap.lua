@@ -39,6 +39,7 @@ vim.keymap.set("n", "<S-A-f>", vim.lsp.buf.format)
 -- Cycle buffer
 vim.keymap.set("n", "<C-i>", vim.cmd.bnext)
 vim.keymap.set("n", "<S-Tab>", vim.cmd.bprev)
+vim.keymap.set("n", "<C-w>", vim.cmd.bdelete)
 
 -- Fix common typos
 vim.cmd([[

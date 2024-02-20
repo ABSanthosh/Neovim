@@ -46,7 +46,7 @@ require("telescope").setup {
     },
     selection_caret = "➻ ",
     prompt_prefix = "  ",
-    path_display = { "smart" },
+    -- path_display = { "smart" },
     dynamic_preview_title = true,
     mappings = {
       i = {
@@ -73,6 +73,7 @@ require("telescope").setup {
         n = { ['<C-w>'] = actions.delete_buffer },
       },
     },
+    `
     find_files = {
       sort_lastused = true, 
       previewer = false,
